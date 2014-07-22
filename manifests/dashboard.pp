@@ -12,10 +12,6 @@ class osx::dashboard($ensure = 'present') {
     key    => 'mcx-disabled',
     domain => 'com.apple.dashboard',
     value  => $enabled,
-    notify => Exec['killall Dashboard'],
-  }
-
-  exec { 'killall Dashboard':
-    refreshonly => true
+    notify => Exec['killall Dock'],
   }
 }

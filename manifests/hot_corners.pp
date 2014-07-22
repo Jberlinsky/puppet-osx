@@ -44,5 +44,6 @@ class osx::hot_corners(
     domain => 'com.apple.dock',
     type   => 'int',
     value  => $modifier_int,
+    notify => Exec['killall Dock'],
   }
 }
