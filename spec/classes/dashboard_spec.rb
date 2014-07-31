@@ -10,11 +10,7 @@ describe 'osx::dashboard' do
         :key    => 'mcx-disabled',
         :domain => 'com.apple.dashboard',
         :value  => true,
-        :notify => 'Exec[killall Dashboard]',
-      })
-
-      should contain_exec('killall Dashboard').with({
-        :refreshonly => true,
+        :notify => 'Exec[killall Dock]',
       })
     end
   end
@@ -27,11 +23,7 @@ describe 'osx::dashboard' do
         :key    => 'mcx-disabled',
         :domain => 'com.apple.dashboard',
         :value  => false,
-        :notify => 'Exec[killall Dashboard]',
-      })
-
-      should contain_exec('killall Dashboard').with({
-        :refreshonly => true,
+        :notify => 'Exec[killall Dock]',
       })
     end
   end
